@@ -6,6 +6,7 @@ Release:	0.pre8
 License:	GPL
 Group:		X11/Applications
 Source0:	http://warderx.ath.cx:81/projects/%{name}-%{version}.-8.tar.gz
+# Source0-md5:	c870241f42b05a1e8a455e06c6078c2d
 Patch0:		%{name}-install.patch
 URL:		http://warderx.ath.cx:81/projects/
 BuildRequires:	autoconf
