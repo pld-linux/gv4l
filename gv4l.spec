@@ -2,7 +2,7 @@ Summary:	GUI frontend for the Video4Linux functions of transcode
 Summary(pl):	Graficzny frontend do funkcji Video4Linux konwertera transcode
 Name:		gv4l
 Version:	2.0
-Release:	0.pre8
+Release:	0.pre8.1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://warderx.ath.cx:81/projects/%{name}-%{version}.-8.tar.gz
