@@ -1,14 +1,14 @@
 Summary:	GUI frontend for the Video4Linux functions of transcode
 Summary(pl):	Graficzny frontend do funkcji Video4Linux konwertera transcode
 Name:		gv4l
-Version:	2.2.3
+Version:	2.2.4
 Release:	0.1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/gv4l/%{name}-%{version}.tar.gz
-# Source0-md5:	f2f1e1261189e364f1e0cad8566c725c
+# Source0-md5:	b5692b64f78948d187e1a024f68c6d7f
 URL:		http://gv4l.sourceforge.net/
-Source1:	%{name}.desktop
+Patch0:		%{name}-desktop.patch
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gtk+2-devel
@@ -26,6 +26,7 @@ transcode.
 
 %prep
 %setup -q
+%patch0 -p1
 
 %build
 %{__libtoolize}
@@ -39,13 +40,12 @@ transcode.
 %install
 rm -rf $RPM_BUILD_ROOT
 
-install -d $RPM_BUILD_ROOT{%{_desktopdir},%{_pixmapsdir}}
+install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
 install pixmaps/gv4l.png $RPM_BUILD_ROOT%{_pixmapsdir}
-install %{SOURCE1} $RPM_BUILD_ROOT%{_desktopdir}
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -54,5 +54,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/*
-%{_desktopdir}/%{name}.desktop
+%{_desktopdir}/*
 %{_pixmapsdir}/%{name}.png
