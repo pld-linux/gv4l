@@ -1,0 +1,38 @@
+diff -urN gv4l-2.0.-8.orig/Makefile.am gv4l-2.0.-8/Makefile.am
+--- gv4l-2.0.-8.orig/Makefile.am	Mon Apr  7 21:56:17 2003
++++ gv4l-2.0.-8/Makefile.am	Mon Apr  7 22:13:34 2003
+@@ -12,30 +12,14 @@
+ 
+ install-data-local:
+ 	@$(NORMAL_INSTALL)
++	mkdir $(DESTDIR)/usr/share/applications/; \
++	cp gv4l.desktop gv4l0.desktop && echo "Exec=$(prefix)/bin/gv4l" >> gv4l0.desktop && cp gv4l0.desktop $(DESTDIR)/usr/share/applications/gv4l.desktop && rm gv4l0.desktop; \
++	cp gv4l1.desktop gv4l0.desktop && echo "Exec=xterm -e $(prefix)/bin/gv4l" >> gv4l0.desktop && cp gv4l0.desktop $(DESTDIR)/usr/share/applications/gv4l1.desktop && rm gv4l0.desktop; \
+ 	if test -d $(srcdir)/pixmaps; then \
+ 	  $(mkinstalldirs) $(DESTDIR)$(datadir)/pixmaps/$(PACKAGE); \
+ 	  for pixmap in $(srcdir)/pixmaps/*; do \
+ 	    if test -f $$pixmap; then \
+-	      $(INSTALL_DATA) $$pixmap $(DESTDIR)$(datadir)/pixmaps/$(PACKAGE); \
+-	        if [ `whoami 2>/dev/null || /usr/bin/whoami 2>/dev/null || /bin/whoami 2>/dev/null || echo "unknown"` != root ]; then \
+-	         mkdir ~/.gnome; \
+-	          mkdir ~/.gnome/apps; \
+-	           cp gv4l.desktop gv4l0.desktop && echo "Exec=$(prefix)/bin/gv4l" >> gv4l0.desktop && cp gv4l0.desktop ~/.gnome/apps/gv4l.desktop && rm gv4l0.desktop; \
+-	            cp gv4l1.desktop gv4l0.desktop && echo "Exec=xterm -e $(prefix)/bin/gv4l" >> gv4l0.desktop && cp gv4l0.desktop ~/.gnome/apps/gv4l1.desktop && rm gv4l0.desktop; \
+-	             setterm -bold on -reverse on; \
+-	              echo ""; \
+-           	       echo "Gv4l icons cannot be installed in /usr/share/pixmaps and may NOT be displayed"; \
+-	                echo "since you aren't running   make install   as root."; \
+-	                 echo ""; \
+-	                  echo "Please run the following with root user privileges:";\
+-	                   echo "ln -sf $(DESTDIR)$(datadir)/pixmaps/$(PACKAGE) /usr/share/pixmaps/$(PACKAGE)"; \
+-	                    echo ""; \
+-	                     setterm -reset; \
+-	                      else ln -sf $(DESTDIR)$(datadir)/pixmaps/$(PACKAGE) /usr/share/pixmaps/$(PACKAGE); \
+-	                       mkdir /usr/share/gnome/apps/Multimedia/; \
+-	                        cp gv4l.desktop gv4l0.desktop && echo "Exec=$(prefix)/bin/gv4l" >> gv4l0.desktop && cp gv4l0.desktop /usr/share/gnome/apps/Multimedia/gv4l.desktop && rm gv4l0.desktop; \
+-	                         cp gv4l1.desktop gv4l0.desktop && echo "Exec=xterm -e $(prefix)/bin/gv4l" >> gv4l0.desktop && cp gv4l0.desktop /usr/share/gnome/apps/Multimedia/gv4l1.desktop && rm gv4l0.desktop; \
+-	                          fi \
++	     $(INSTALL_DATA) $$pixmap $(DESTDIR)$(datadir)/pixmaps/$(PACKAGE); \
+ 	    fi \
+ 	  done \
+ 	fi
