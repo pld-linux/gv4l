@@ -1,4 +1,5 @@
-Summary:	Gui frontend for the Video4Linux functions of transcode
+Summary:	GUI frontend for the Video4Linux functions of transcode
+Summary(pl):	Graficzny frontend do funkcji Video4Linux konwertera transcode
 Name:		gv4l
 Version:	2.0
 Release:	0.pre8
@@ -9,14 +10,18 @@ Patch0:		%{name}-install.patch
 URL:		http://warderx.ath.cx:81/projects/
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	libtool
-BuildRequires:	intltool >= 0.25
 BuildRequires:	gtk+2-devel
+BuildRequires:	intltool >= 0.25
+BuildRequires:	libtool
 Requires:	transcode >= 0.6.3
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-Gv4l is a gui frontend for the v4l functions of transcode.
+Gv4l is a GUI frontend for the v4l functions of transcode.
+
+%description -l pl
+Gv4l to graficzny frontend do funkcji Video4Linux konwertera
+transcode.
 
 %prep
 %setup -q -n %{name}-%{version}.-8
