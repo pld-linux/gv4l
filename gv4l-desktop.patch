@@ -1,0 +1,17 @@
+diff -urN gv4l-2.2.4.orig/gv4l.desktop gv4l-2.2.4/gv4l.desktop
+--- gv4l-2.2.4.orig/gv4l.desktop	2004-11-22 18:34:12.000000000 +0100
++++ gv4l-2.2.4/gv4l.desktop	2004-11-23 10:03:45.226609592 +0100
+@@ -2,9 +2,11 @@
+ Encoding=UTF-8
+ Name=Gv4l
+ Comment=Gui frontend for the Video4Linux functions of transcode
++Comment[pl]=Graficzny frontend do funkcji Video4Linux konwertera transcode
+ Exec=gv4l
+-Icon=gv4l/gv4l.png
++Icon=gv4l.png
+ StartupNotify=true
+ Terminal=false
+ Type=Application
+-Categories=GNOME;Application;AudioVideo;X-Ximian-Main;X-Red-Hat-Base;
++Categories=GTK;Video;Recorder;
++# vi: encoding=utf-8
