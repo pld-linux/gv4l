@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=Gv4l
+Comment=Gui frontend for the Video4Linux functions of transcode
+Comment[pl]=Graficzny frontend do funkcji Video4Linux konwertera transcode
+Icon=gv4l.png
+Exec=gv4l
+Terminal=false
+Type=Application
+Encoding=UTF-8
+StartupNotify=true
+Categories=Application;AudioVideo;
+# vi: encoding=utf-8
