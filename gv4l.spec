@@ -13,6 +13,7 @@ BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gtk+2-devel
 BuildRequires:	intltool >= 0.25
+BuildRequires:	libgnomeui-devel
 BuildRequires:	libtool
 Requires:	transcode >= 0.6.7
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
