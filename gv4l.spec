@@ -2,7 +2,7 @@ Summary:	GUI frontend for the Video4Linux functions of transcode
 Summary(pl):	Graficzny frontend do funkcji Video4Linux konwertera transcode
 Name:		gv4l
 Version:	2.2.4
-Release:	0.1
+Release:	1
 License:	GPL
 Group:		X11/Applications
 Source0:	http://dl.sourceforge.net/gv4l/%{name}-%{version}.tar.gz
@@ -34,8 +34,12 @@ transcode.
 %{__aclocal}
 %{__automake}
 %{__autoconf}
-%configure
-
+%configure \
+	--enable-v4l \
+	--enable-gtk \
+	--enable-sdl \
+	--enable-X \
+	--enable-lame
 %{__make}
 
 %install
@@ -46,8 +50,6 @@ install -d $RPM_BUILD_ROOT%{_pixmapsdir}
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
-install pixmaps/gv4l.png $RPM_BUILD_ROOT%{_pixmapsdir}
-
 %clean
 rm -rf $RPM_BUILD_ROOT
 
@@ -56,4 +58,4 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_desktopdir}/*
-%{_pixmapsdir}/%{name}.png
+%{_pixmapsdir}/%{name}/*.png
