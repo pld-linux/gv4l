@@ -1,5 +1,5 @@
 Summary:	GUI frontend for the Video4Linux functions of transcode
-Summary(pl):	Graficzny frontend do funkcji Video4Linux konwertera transcode
+Summary(pl.UTF-8):   Graficzny frontend do funkcji Video4Linux konwertera transcode
 Name:		gv4l
 Version:	2.2.4
 Release:	1
@@ -21,7 +21,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 %description
 Gv4l is a GUI frontend for the v4l functions of transcode.
 
-%description -l pl
+%description -l pl.UTF-8
 Gv4l to graficzny frontend do funkcji Video4Linux konwertera
 transcode.
 
