@@ -58,4 +58,5 @@ rm -rf $RPM_BUILD_ROOT
 %doc AUTHORS ChangeLog NEWS README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_desktopdir}/*.desktop
+%dir %{_pixmapsdir}/%{name}
 %{_pixmapsdir}/%{name}/*.png
